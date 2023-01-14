@@ -1,0 +1,5 @@
+Start server:
+/server/ node index.js
+
+Start client:
+/client/ npm run serve
