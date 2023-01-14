@@ -16,16 +16,14 @@ export default {
   name: 'App',
   data() {
     const image = localStorage.getItem("image") || "";
-    return { image, isLoad: false }
+    return { image }
   },
   methods: {
     async generateImage() {
-     this.isLoad = true;
      const response = await fetch(BASE_URL);
      const { data: image } = await response.json();
      this.image = `${BASE_URL}/public/${image}`;
      localStorage.setItem("image", this.image);
-     this.isLoad = false;
     },
   },
 };
