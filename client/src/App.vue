@@ -1,9 +1,12 @@
 <template>
   <div class="app">
     <h1>Welcome to the Image Generator app!</h1>
-    <a :href="image" download="image.png">
-      <img :src="image" width="440" height="440"/>
-    </a>
+    <h1 v-if="image">
+      <a :href="image" download="image.png">
+        <img :src="image" width="440" height="440"/>
+      </a>
+    </h1>
+    <h4 v-else>Click on "generate"</h4>
     <button class="btn" @click="generateImage">generate</button>
   </div>
 </template>
